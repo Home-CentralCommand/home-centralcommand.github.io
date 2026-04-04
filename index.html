@@ -291,6 +291,27 @@
             background: #3f6eb0;
             border-color: #3f6eb0;
         }
+        .paypal-button {
+            background: #ffc439;
+            color: #1a1a1a;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            margin: 16px 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: 0.15s;
+        }
+        .paypal-button:hover {
+            background: #e5b02e;
+        }
         .modal-email-box {
             display: flex;
             align-items: center;
@@ -402,7 +423,7 @@
             <div class="project-card" onclick="abrirModal('interface')">
                 <div class="project-code">// INTERFACE</div>
                 <h3>Proyecto 4</h3>
-                <div class="placeholder-desc">Plataforma de diseño minimalista con enfoque funcional y estable.</div>
+                <div class="placeholder-desc">Proximamente...</div>
             </div>
         </div>
     </div>
@@ -419,6 +440,14 @@
         <div class="callsign" style="font-size:1.3rem; margin-bottom:12px;">NEXUS::CÓDIGO <span>El Proyecto</span></div>
         <div style="font-size:1.3rem; margin-bottom:20px;">Software con propósito.</div>
         <div class="modal-email-box" onclick="copiarEmail(event)"><span class="icon">📬</span><span class="email">nexus.codigo.access@gmail.com</span></div>
+        
+        <div style="text-align: center; margin: 16px 0; padding-top: 8px; border-top: 1px solid #3a3a3a;">
+            <div style="font-weight: bold; margin-bottom: 12px; color: #e0e0e0;">= Colaboraciones =</div>
+            <button class="paypal-button" onclick="window.open('https://paypal.me/NEXUSCodigoMX', '_blank')" style="padding: 0; background: transparent; border: none;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="width: 100%; max-width: 150px; height: auto; filter: brightness(0) invert(1);">
+</button>
+        </div>
+        
         <button class="modal-close" onclick="cerrarModal('contacto')">CERRAR</button>
         <div class="modal-footer"><div class="copyright"><strong>© NEXUS Código</strong> - herramientas con propósito <span>ID: Nexus code project.</span></div></div>
     </div>
