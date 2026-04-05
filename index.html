@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>NEXUS · estación de código</title>
     <style>
+        /* ===============================================
+           TEMA: WINDOWS XP BLACK EDITION (ROYALE NOIR) - VERSIÓN NEGRO PURO
+           =============================================== */
         * {
             margin: 0;
             padding: 0;
@@ -12,191 +15,228 @@
         }
 
         body {
-            background: #1a1a1a;
-            color: #e0e0e0;
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-            font-weight: 350;
-            line-height: 1.45;
-            padding: 16px;
-            overflow-x: hidden;
+            background: #0a0a0a;
+            font-family: 'Tahoma', 'Segoe UI', 'MS Shell Dlg 2', sans-serif;
+            font-size: 12px;
+            padding: 20px;
         }
 
         .nexus-station {
             max-width: 1360px;
             margin: 0 auto;
-            background: #1e1e1e;
-            border: 1px solid #3a3a3a;
-            box-shadow: 0 30px 50px -25px rgba(0,0,0,0.9);
-            padding: 20px;
+            background: #000000;
+            border: 1px solid #333333;
+            border-radius: 8px 8px 6px 6px;
+            box-shadow: 0 0 0 1px #000000, 8px 8px 20px rgba(0,0,0,0.8);
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            overflow: hidden;
         }
 
         .grid-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+            padding: 6px 10px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
             flex-wrap: wrap;
             gap: 12px;
-            border-bottom: 2px solid #3a3a3a;
-            padding-bottom: 8px;
+            border-bottom: 1px solid #333333;
+            box-shadow: inset 0 1px 0 #2a2a2a, 0 1px 0 #0f1a24;
         }
+
         .callsign {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: #3f6eb0;
+            font-family: 'Tahoma', 'Segoe UI', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 0 #000000;
         }
         .callsign span {
-            font-size: 0.9rem;
-            margin-left: 6px;
-        }
-        .id-tag {
-            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.8rem;
-            color: #3f6eb0;
+            color: #ffffff;
+            margin-left: 6px;
+            font-weight: normal;
+        }
+
+        .id-tag {
+            font-family: 'Tahoma', monospace;
+            font-size: 0.75rem;
+            color: #ffffff;
             cursor: pointer;
-            border-bottom: 1px dotted #3a3a3a;
+            background: #1a1a1a;
+            padding: 2px 8px;
+            border: 1px solid #ffffff;
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+        .id-tag:hover {
+            background: #333333;
+            color: #ffffff;
+            border-color: #ffffff;
         }
 
         .control-board {
             display: flex;
             flex-direction: column;
-            gap: 28px;
+            gap: 20px;
+            padding: 18px;
+            background: #000000;
         }
 
         .philo-panel {
             width: 100%;
+            background: #0a0a0a;
+            padding: 10px;
+            border: 1px solid #333333;
+            border-radius: 4px;
         }
+
         .signature {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            color: #3f6eb0;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
+            font-family: 'Tahoma', monospace;
+            font-size: 0.7rem;
+            color: #CCCCCC;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 5px;
+            margin-bottom: 8px;
         }
+
         .core-statement {
-            font-size: 1.6rem;
-            font-weight: 450;
+            font-size: 1.4rem;
+            font-weight: bold;
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin: 12px 0;
+            color: #ffffff;
         }
         .thin {
-            font-weight: 300;
-            color: #3f6eb0;
-            font-size: 1.4rem;
+            font-weight: normal;
+            color: #888888;
+            font-size: 1.1rem;
         }
+
         .philo-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin: 20px 0 0 0;
+            gap: 8px;
+            margin: 15px 0;
         }
+
         .philo-item {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             align-items: flex-start;
+            background: #0a0a0a;
+            padding: 6px 10px;
+            border-left: 4px solid #ffffff;
+            border-radius: 0 4px 4px 0;
         }
         .philo-icon {
-            font-size: 1.4rem;
-            color: #3f6eb0;
-            min-width: 32px;
+            font-size: 1.2rem;
+            min-width: 28px;
+            color: #ffffff;
         }
         .philo-text {
-            font-size: 0.85rem;
-            color: #c0c0c0;
+            font-size: 0.8rem;
+            color: #cccccc;
             line-height: 1.4;
         }
 
         .text-slider {
-            margin-top: 20px;
-            margin-bottom: 0;
-            min-height: 200px;
-        }
-        .slide-texto h3, .slide-texto h4, .slide-texto p {
-            margin: 0;
-            padding: 0;
+            margin-top: 16px;
+            background: #0a0a0a;
+            border: 1px solid #333333;
+            padding: 12px;
+            border-radius: 4px;
+            min-height: 180px;
         }
         .slide-texto h3 {
-            font-size: 1.3rem;
-            font-family: 'IBM Plex Mono', monospace;
-            color: white;
-            margin-bottom: 0px;
+            font-size: 1rem;
+            font-family: 'Tahoma', sans-serif;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 6px;
         }
         .slide-texto h4 {
-            font-size: 0.9rem;
-            border-left: 2px solid #3f6eb0;
-            padding-left: 12px;
-            margin: 12px 0 16px 0;
-            color: #e0e0e0;
+            font-size: 0.8rem;
+            border-left: 3px solid #ffffff;
+            padding-left: 8px;
+            margin: 8px 0;
+            color: #c0d0e0;
         }
         .slide-texto p {
+            font-size: 0.75rem;
+            margin: 5px 0;
             display: flex;
+            gap: 8px;
             align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            margin: 4px 0;
-        }
-
-        .mobile-badge {
-            display: none;
+            color: #cccccc;
         }
 
         .project-panel {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 18px;
+            margin: 10px 0;
         }
 
         .project-card {
-            background: #252525;
-            border: 1px solid #3a3a3a;
+            background: #0a0a0a;
+            border: 1px solid #000000;
+            border-radius: 6px;
             padding: 16px;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.15s ease;
+            box-shadow: inset 0 1px 0 #1a1a1a, 0 1px 2px rgba(0,0,0,0.5);
         }
         .project-card:hover {
-            border-color: #3f6eb0;
-            background: #2a2a2a;
+            background: #1a1a1a;
+            border-color: #333333;
+            transform: translateY(-1px);
         }
+
         .project-code {
-            font-family: 'IBM Plex Mono', monospace;
+            font-family: 'Tahoma', monospace;
             font-size: 0.7rem;
-            color: #3f6eb0;
-            margin-bottom: 8px;
+            color: #888888;
+            font-weight: bold;
+            margin-bottom: 6px;
         }
         .project-card h3 {
             font-size: 1.2rem;
-            border-left: 2px solid #3f6eb0;
+            border-left: 3px solid #ffffff;
             padding-left: 12px;
-            margin-bottom: 10px;
-            font-weight: 500;
+            margin: 8px 0 10px 0;
+            font-weight: bold;
+            color: #ffffff;
         }
         .project-desc {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #c0c0c0;
             margin-bottom: 12px;
             line-height: 1.4;
-            padding-left: 6px;
         }
         .feature-line {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.8rem;
-            margin-bottom: 6px;
+            gap: 8px;
+            font-size: 0.7rem;
+            margin-bottom: 5px;
+            color: #bbbbbb;
         }
         .feature-icon {
-            font-size: 1rem;
-            min-width: 24px;
+            font-size: 0.9rem;
+            width: 32px;
+            display: inline-block;
+            text-align: center;
+            flex-shrink: 0;
         }
         .placeholder-desc {
-            font-size: 0.8rem;
-            color: #3f6eb0;
-            border-left: 2px solid #3f6eb0;
+            font-size: 0.75rem;
+            color: #888888;
+            border-left: 2px solid #ffffff;
             padding-left: 10px;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .station-footer {
@@ -205,22 +245,24 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 12px;
-            border-top: 1px solid #3a3a3a;
-            padding-top: 16px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.7rem;
-        }
-        .copyright {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
+            border-top: 1px solid #333333;
+            padding: 12px 18px;
+            background: #000000;
+            font-family: 'Tahoma', monospace;
+            font-size: 0.65rem;
+            color: #ffffff;
         }
         .about-link {
-            color: #3f6eb0;
+            color: #ffffff;
             cursor: pointer;
-            border-bottom: 1px dotted #3a3a3a;
+            text-decoration: underline;
+            transition: 0.1s;
+        }
+        .about-link:hover {
+            color: #cccccc;
         }
 
+        /* --- MODALES CON TEXTO PEQUEÑO --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -228,7 +270,6 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.95);
-            backdrop-filter: blur(4px);
             display: none;
             align-items: center;
             justify-content: center;
@@ -236,140 +277,126 @@
             padding: 20px;
         }
         .modal-content {
-            background: #1e1e1e;
-            border: 1px solid #3a3a3a;
-            padding: 24px;
+            background: #0a0a0a;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            padding: 20px;
             width: 100%;
             max-width: 500px;
-            max-height: 90vh;
+            max-height: 85vh;
             overflow-y: auto;
+            font-family: 'Tahoma', sans-serif;
+            color: #e0e0e0;
         }
         .modal-content h3 {
-            font-size: 1.5rem;
-            border-left: 3px solid #3f6eb0;
-            padding-left: 16px;
+            font-size: 1.1rem;
+            border-left: 4px solid #000000;
+            padding-left: 12px;
             margin-bottom: 16px;
+            color: #ffffff;
         }
-        .modal-content h4 {
+        .modal-content .strong-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 12px 0 4px;
+            color: #ffffff;
+        }
+        .modal-content .bold-large {
+            font-weight: bold;
             font-size: 1rem;
-            margin: 16px 0 8px;
+            margin: 10px 0 5px;
+            color: #ffffff;
         }
         .modal-content p {
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .modal-content h4 {
             font-size: 0.85rem;
-            margin-bottom: 12px;
-            line-height: 1.5;
+            margin: 12px 0 6px;
+            color: #666666;
         }
         .modal-content ul {
             list-style: none;
-            margin-bottom: 20px;
+            margin: 12px 0;
         }
         .modal-content li {
             display: flex;
-            align-items: center;
             gap: 10px;
-            font-size: 0.8rem;
-            margin-bottom: 8px;
+            font-size: 0.7rem;
+            margin-bottom: 6px;
         }
         .btn-download, .modal-close {
             width: 100%;
-            padding: 12px;
+            padding: 8px;
             margin-top: 12px;
-            font-family: 'IBM Plex Mono', monospace;
-            background: #252525;
-            border: 1px solid #3a3a3a;
-            color: white;
-            cursor: pointer;
-            transition: 0.15s;
-            text-align: center;
-        }
-        .btn-download {
-            background: #3f6eb0;
-            border-color: #2d4a7a;
+            background: #1a1a1a;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            font-family: 'Tahoma', monospace;
             font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+            transition: all 0.2s;
         }
         .btn-download:hover, .modal-close:hover {
-            background: #3f6eb0;
-            border-color: #3f6eb0;
-        }
-        .paypal-button {
-            background: #ffc439;
-            color: #1a1a1a;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 12px;
-            margin: 16px 0;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            transition: 0.15s;
-        }
-        .paypal-button:hover {
-            background: #e5b02e;
+            background: #333333;
+            border-color: #000000;
+            color: #ffffff;
         }
         .modal-email-box {
             display: flex;
             align-items: center;
             gap: 12px;
-            background: #252525;
-            padding: 12px;
-            margin: 16px 0;
+            background: #1a1a1a;
+            padding: 10px;
+            margin: 15px 0;
             cursor: pointer;
-            flex-wrap: wrap;
+            border: 1px solid #333333;
+            border-radius: 4px;
+        }
+        .paypal-button {
+            background: #ffffff;
+            padding: 8px;
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+        .paypal-button img {
+            max-width: 110px;
+            filter: brightness(0);
+        }
+        .paypal-button:hover {
+            background: #cccccc;
         }
         .modal-footer {
-            border-top: 1px solid #3a3a3a;
-            padding-top: 16px;
-            margin-top: 16px;
-            font-size: 0.7rem;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            border-top: 1px solid #333333;
+            padding-top: 12px;
+            margin-top: 12px;
+            font-size: 0.65rem;
         }
 
         @media (min-width: 768px) {
-            body { padding: 24px; }
-            .nexus-station { padding: 32px; }
-            .control-board { flex-direction: row; gap: 32px; }
-            .philo-panel { flex: 1.2; border-right: 1px solid #3a3a3a; padding-right: 28px; }
+            .control-board { flex-direction: row; gap: 28px; }
+            .philo-panel { flex: 1.2; border-right: 1px solid #333333; padding-right: 20px; }
             .project-panel { grid-template-columns: repeat(2, 1fr); flex: 2.2; }
-            .project-card { padding: 20px; }
-            .text-slider { min-height: 240px; }
+            .text-slider { min-height: 200px; }
         }
-
-        @media (min-width: 1024px) {
-            .nexus-station { padding: 40px 48px; }
-            .project-card h3 { font-size: 1.4rem; }
-            .slide-texto h3 { font-size: 1.5rem; }
-        }
-
         @media (max-width: 767px) {
-    .grid-header { flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .callsign { white-space: nowrap; font-size: 1.2rem; }
-    .callsign span { white-space: nowrap; font-size: 0.75rem; }
-    .id-tag { white-space: nowrap; font-size: 0.7rem; order: 0; margin-top: 0; }
-    .station-footer { flex-direction: column; align-items: flex-start; }
-    .about-link { order: 2; white-space: nowrap; }
-    .text-slider { min-height: 240px; }
-    .mobile-badge { display: block; text-align: center; margin: 0; }
-}
-
-        @media (max-width: 480px) {
-            .slide-texto h3 { font-size: 1.2rem; }
-            .slide-texto h4 { font-size: 0.8rem; }
-            .slide-texto p { font-size: 0.75rem; }
-            .core-statement { font-size: 1.3rem; }
-            .thin { font-size: 1.1rem; }
-            .text-slider { min-height: 240px; }
+            .grid-header { flex-direction: column; align-items: stretch; text-align: center; }
+            .callsign, .id-tag { text-align: center; }
+            .mobile-badge { display: block; text-align: center; margin: 10px 0; }
+            .text-slider { min-height: 220px; }
         }
+        .mobile-badge { display: none; }
     </style>
 </head>
 <body>
+
 <div class="nexus-station">
     <div class="grid-header">
         <div class="callsign">NEXUS::CÓDIGO <span>El Proyecto</span></div>
@@ -390,7 +417,7 @@
         </div>
 
         <div class="mobile-badge">
-            <strong style="color: white; font-size: 22px;">Programas Windows 10/11</strong>
+            <strong style="color: #ffffff;">Programas Windows 10/11</strong>
         </div>
 
         <div class="project-panel">
@@ -398,29 +425,32 @@
                 <div class="project-code">// ENGINE</div>
                 <h3>NEXUS OPTIMIZER Tools</h3>
                 <div class="project-desc">Programa para la optimización profunda del sistema, con limpieza de residuos, desactivación de servicios innecesarios y activación offline de Windows.</div>
-                <div class="feature-line"><span class="feature-icon">🗑️</span> Limpieza de temporales</div>
-                <div class="feature-line"><span class="feature-icon">🔒</span> Bloqueo telemetría</div>
-                <div class="feature-line"><span class="feature-icon">📴</span> Desactivación OneDrive, Cortana, Xbox</div>
-                <div class="feature-line"><span class="feature-icon">🔑</span> Activación offline (KMS público)</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Optimización completa de la computadora</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Bloqueo de telemetría y datos de diagnóstico</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Desactivación OneDrive, Cortana, Xbox etc..</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Activación offline (KMS público)</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Bloqueo de Windows Update</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Bloqueo de Windows Defender</div>
             </div>
             <div class="project-card" onclick="abrirModal('clean')">
                 <div class="project-code">// CLEAN</div>
                 <h3>NEXUS CLEAN Pro</h3>
                 <div class="project-desc">Programa para la puesta a punto del equipo, con herramientas de limpieza, optimización de servicios y activación persistente del sistema.</div>
-                <div class="feature-line"><span class="feature-icon">🧹</span> Elimina archivos basura Windows</div>
-                <div class="feature-line"><span class="feature-icon">🌐</span> Limpieza Chrome, Edge, Firefox</div>
-                <div class="feature-line"><span class="feature-icon">📝</span> Optimización del registro</div>
-                <div class="feature-line"><span class="feature-icon">⚙️</span> Gestor inicio / desinstalador</div>
-                <div class="feature-line"><span class="feature-icon">⚡</span> Aceleración rendimiento</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Elimina archivos basura Windows</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Limpieza Chrome, Edge, Firefox</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Optimización del registro</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Gestor inicio / desinstalador</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Aceleración rendimiento</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Vaciar papelera</div>
             </div>
             <div class="project-card" onclick="abrirModal('data')">
                 <div class="project-code">// DATA</div>
                 <h3>NEXUS BACKUP - Pro</h3>
-                <div class="feature-line"><span class="feature-icon">📱</span> Respaldo total Android</div>
-                <div class="feature-line"><span class="feature-icon">📦</span> Backup de apps instaladas</div>
-                <div class="feature-line"><span class="feature-icon">📸</span> Fotos, videos y audios</div>
-                <div class="feature-line"><span class="feature-icon">💬</span> Backup de WhatsApp</div>
-                <div class="feature-line"><span class="feature-icon">⚠️</span> Factory Reset desde PC</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Respaldo total Android</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Backup de apps instaladas</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Fotos, videos y audios</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Backup de WhatsApp</div>
+                <div class="feature-line"><span class="feature-icon">✅</span> Factory Reset desde PC</div>
             </div>
             <div class="project-card" onclick="abrirModal('interface')">
                 <div class="project-code">// INTERFACE</div>
@@ -431,29 +461,28 @@
     </div>
 
     <div class="station-footer">
-        <div class="copyright"><strong>© NEXUS Código</strong> <span class="separator">-</span> herramientas con propósito <span class="id-code">ID: Nexus code project.</span></div>
+        <div class="copyright"><strong>© NEXUS Código</strong> - herramientas con propósito <span class="id-code">ID: Nexus code project.</span></div>
         <div class="about-link" onclick="abrirModal('acerca')">Acerca de</div>
     </div>
 </div>
 
-<!-- MODALES -->
+<!-- ===================== MODALES ===================== -->
+
+<!-- MODAL CONTACTO -->
 <div id="modal-contacto" class="modal-overlay" onclick="cerrarModalSiBackground(event,'contacto')">
     <div class="modal-content">
-        <div class="callsign" style="font-size:1.3rem; margin-bottom:12px;">NEXUS::CÓDIGO <span>El Proyecto</span></div>
-        <div style="font-size:1.3rem; margin-bottom:20px;">Software con propósito.</div>
-        <div class="modal-email-box" onclick="copiarEmail(event)"><span class="icon">📬</span><span class="email">nexus.codigo.access@gmail.com</span></div>
-        
-        <div style="text-align: center; margin: 16px 0; padding-top: 8px; border-top: 1px solid #3a3a3a;">
-            <div style="font-weight: bold; margin-bottom: 12px; color: #e0e0e0;">= Colaboraciones =</div>
-            <button class="paypal-button" onclick="window.open('https://paypal.me/NEXUSCodigoMX', '_blank')" style="padding: 0; background: transparent; border: none;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" style="width: 100%; max-width: 150px; height: auto; filter: brightness(0) invert(1);">
-</button>
+        <div class="callsign" style="font-size:1.2rem;">NEXUS::CÓDIGO <span>El Proyecto</span></div>
+        <div style="margin: 12px 0;">Software con propósito.</div>
+        <div class="modal-email-box" onclick="copiarEmail(event)"><span>📬</span><span>nexus.codigo.access@gmail.com</span></div>
+        <div style="text-align:center; border-top:1px solid #333333; padding-top:10px;">
+            <div style="margin-bottom:8px;">= Colaboraciones =</div>
+            <button class="paypal-button" onclick="window.open('https://paypal.me/NEXUSCodigoMX', '_blank')"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"></button>
         </div>
-        
         <button class="modal-close" onclick="cerrarModal('contacto')">CERRAR</button>
-        <div class="modal-footer"><div class="copyright"><strong>© NEXUS Código</strong> - herramientas con propósito <span>ID: Nexus code project.</span></div></div>
     </div>
 </div>
+
+<!-- MODAL ACERCA DE -->
 <div id="modal-acerca" class="modal-overlay" onclick="cerrarModalSiBackground(event,'acerca')">
     <div class="modal-content">
         <h3>Acerca de NEXUS</h3>
@@ -462,47 +491,88 @@
         <p>Todas las aplicaciones son completamente portables, no requieren instalación y no modifican archivos críticos del sistema. El código es abierto y verificable.</p>
         <h4>Filosofía del proyecto</h4>
         <ul><li><span>⚡</span> Soluciones directas, sin rodeos</li><li><span>🔷</span> Transparencia total</li><li><span>⚙️</span> Optimización real</li><li><span>🎯</span> Software que resuelve problemas</li></ul>
+        <p><strong>NEXUS no recopila datos, no muestra publicidad y no depende de conexiones externas para funcionar. Todo el desarrollo está orientado a ofrecer herramientas duraderas, confiables y éticas.</strong></p>
         <button class="modal-close" onclick="cerrarModal('acerca')">Cerrar</button>
     </div>
 </div>
+
+<!-- MODAL ENGINE -->
 <div id="modal-engine" class="modal-overlay" onclick="cerrarModalSiBackground(event,'engine')">
     <div class="modal-content">
         <h3>NEXUS OPTIMIZER Tools</h3>
-        <p>Programa para la optimización profunda del sistema, limpieza de residuos, desactivación de servicios innecesarios y activación offline de Windows.</p>
-        <ul><li><span>🗑️</span> Limpieza de archivos temporales</li><li><span>🔒</span> Bloqueo de telemetría</li><li><span>📴</span> Desactivación OneDrive, Cortana, Xbox</li><li><span>🔑</span> Activación offline</li><li><span>⚡</span> Optimización de servicios</li><li><span>🧹</span> Limpieza de cachés</li></ul>
+        <div class="bold-large">Programa para la optimización profunda del sistema.</div>
+        <p>Limpieza de residuos, desactivación de servicios innecesarios y activación offline de Windows.</p>
+        <h4>Características principales</h4>
+        <ul>
+            <li><span>✅</span> Optimización completa de la computadora</li>
+            <li><span>✅</span> Bloqueo de telemetría y datos de diagnóstico</li>
+            <li><span>✅</span> Desactivación de OneDrive, Cortana y servicios Xbox etc..</li>
+            <li><span>✅</span> Activación offline de Windows (KMS público / local)</li>
+            <li><span>✅</span> Optimización de servicios del sistema</li>
+            <li><span>✅</span> Limpieza de cachés y archivos residuales</li>
+            <li><span>✅</span> Bloqueo de Windows Update</li>
+            <li><span>✅</span> Bloqueo de Windows Defender</li>
+        </ul>
         <button class="btn-download" onclick="window.open('https://github.com/Proyecto-Nexus/proyecto-nexus.github.io/releases/download/v1.0/NEXUS.OPTIMIZER.exe', '_blank')">DESCARGAR</button>
         <button class="modal-close" onclick="cerrarModal('engine')">ACEPTAR</button>
     </div>
 </div>
+
+<!-- MODAL CLEAN -->
 <div id="modal-clean" class="modal-overlay" onclick="cerrarModalSiBackground(event,'clean')">
     <div class="modal-content">
         <h3>NEXUS CLEAN Pro</h3>
-        <p>Programa para la puesta a punto del equipo, con herramientas de limpieza, optimización de servicios y activación persistente.</p>
-        <ul><li><span>🧹</span> Elimina basura Windows</li><li><span>🌐</span> Limpieza Chrome, Edge, Firefox</li><li><span>📝</span> Optimización del registro</li><li><span>⚙️</span> Gestor inicio / desinstalador</li><li><span>⚡</span> Aceleración rendimiento</li><li><span>🗑️</span> Vaciar papelera</li></ul>
+        <div class="bold-large">Programa para la puesta a punto del equipo.</div>
+        <p>Herramientas de limpieza, optimización de servicios y activación persistente.</p>
+        <h4>Características principales</h4>
+        <ul>
+            <li><span>✅</span> Elimina basura de Windows</li>
+            <li><span>✅</span> Limpieza Chrome, Edge, Firefox</li>
+            <li><span>✅</span> Optimización del registro</li>
+            <li><span>✅</span> Gestor inicio / desinstalador</li>
+            <li><span>✅</span> Aceleración rendimiento</li>
+            <li><span>✅</span> Vaciar papelera</li>
+        </ul>
         <button class="btn-download" onclick="window.open('https://github.com/Proyecto-Nexus/proyecto-nexus.github.io/releases/download/v1.0/NEXUS.CLEAN.PRO.exe', '_blank')">DESCARGAR</button>
         <button class="modal-close" onclick="cerrarModal('clean')">ACEPTAR</button>
     </div>
 </div>
+
+<!-- MODAL DATA -->
 <div id="modal-data" class="modal-overlay" onclick="cerrarModalSiBackground(event,'data')">
     <div class="modal-content">
         <h3>NEXUS BACKUP - Pro</h3>
-        <p>Respaldo total de tu dispositivo Android. Apps, fotos, videos, audios, documentos y WhatsApp. Restauración automática y Factory Reset incluido.</p>
-        <ul><li><span>📦</span> Backup de apps usuario</li><li><span>📸</span> Fotos, videos, audios</li><li><span>📄</span> Documentos y descargas</li><li><span>💬</span> Backup WhatsApp</li><li><span>🔄</span> Restauración automática</li><li><span>⚠️</span> Factory Reset desde PC</li><li><span>🔌</span> ADB automático</li><li><span>📦</span> 100% portable</li></ul>
+        <div class="bold-large">Respaldo total de tu dispositivo Android.</div>
+        <p>Apps, fotos, videos, audios, documentos y WhatsApp.<br>Restauración automática y <strong>Factory Reset</strong> incluido.</p>
+        <h4>Características principales</h4>
+        <ul>
+            <li><span>✅</span> Backup de apps usuario</li>
+            <li><span>✅</span> Fotos, videos, audios</li>
+            <li><span>✅</span> Documentos y descargas</li>
+            <li><span>✅</span> Backup WhatsApp</li>
+            <li><span>✅</span> Restauración automática</li>
+            <li><span>✅</span> Factory Reset desde PC</li>
+            <li><span>✅</span> ADB automático</li>
+            <li><span>✅</span> 100% portable</li>
+        </ul>
         <button class="btn-download" onclick="window.open('https://github.com/Proyecto-Nexus/proyecto-nexus.github.io/releases/download/v1.0/NEXUS.Backup.exe', '_blank')">DESCARGAR</button>
         <button class="modal-close" onclick="cerrarModal('data')">ACEPTAR</button>
     </div>
 </div>
+
+<!-- MODAL INTERFACE -->
 <div id="modal-interface" class="modal-overlay" onclick="cerrarModalSiBackground(event,'interface')">
     <div class="modal-content">
         <h3>Proyecto 4</h3>
         <p>Plataforma de diseño minimalista con enfoque funcional y estable.</p>
-        <ul><li><span>🎨</span> Diseño minimalista</li><li><span>⚡</span> Alto rendimiento</li><li><span>🔧</span> Fácil configuración</li><li><span>🔄</span> Actualizaciones automáticas</li></ul>
+        <ul><li><span>✅</span> Diseño minimalista</li><li><span>✅</span> Alto rendimiento</li><li><span>✅</span> Fácil configuración</li><li><span>✅</span> Actualizaciones automáticas</li></ul>
         <button class="btn-download" onclick="window.location.href='#'">DESCARGAR</button>
         <button class="modal-close" onclick="cerrarModal('interface')">ACEPTAR</button>
     </div>
 </div>
 
 <script>
+    // --- SLIDER (NO MUEVE LA PÁGINA) ---
     const slides = [
         { titulo: "NEXUS OPTIMIZER", subtitulo: "Optimización completa para Windows 10/11", items: ["✅ Optimización completa del sistema","✅ Limpieza de archivos temporales","✅ Bloquear Windows Update y Defender","✅ Activar Windows 10/11 offline","✅ 100% portable, sin instalación"] },
         { titulo: "NEXUS CLEAN PRO", subtitulo: "Limpiador profesional para Windows", items: ["✅ Limpieza de archivos temporales","✅ Limpieza de navegadores","✅ Limpieza y optimización del registro","✅ Gestor de programas de inicio","✅ Desinstalador de aplicaciones","✅ Vaciar papelera de reciclaje"] },
@@ -517,10 +587,22 @@
     render();
     setInterval(() => { idx = (idx+1) % slides.length; render(); }, 8000);
 
-    function abrirModal(id) { document.getElementById('modal-'+id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-    function cerrarModal(id) { document.getElementById('modal-'+id).style.display = 'none'; document.body.style.overflow = ''; }
-    function cerrarModalSiBackground(e, id) { if(e.target === document.getElementById('modal-'+id)) cerrarModal(id); }
-    function copiarEmail(e) { e.stopPropagation(); navigator.clipboard.writeText("nexus.codigo.access@gmail.com").then(()=>alert("Email copiado")).catch(()=>alert("Error")); }
+    // --- FUNCIONES MODALES ---
+    function abrirModal(id) { 
+        document.getElementById('modal-'+id).style.display = 'flex'; 
+        document.body.style.overflow = 'hidden'; 
+    }
+    function cerrarModal(id) { 
+        document.getElementById('modal-'+id).style.display = 'none'; 
+        document.body.style.overflow = ''; 
+    }
+    function cerrarModalSiBackground(e, id) { 
+        if(e.target === document.getElementById('modal-'+id)) cerrarModal(id); 
+    }
+    function copiarEmail(e) { 
+        e.stopPropagation(); 
+        navigator.clipboard.writeText("nexus.codigo.access@gmail.com").then(()=>alert("Email copiado")).catch(()=>alert("Error")); 
+    }
 </script>
 </body>
 </html>
