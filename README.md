@@ -18,9 +18,7 @@ Prioridad en estructura clara, funcionalidad sólida y diseño sin ruido.
 [https://proyecto-nexus.github.io/](https://proyecto-nexus.github.io/)
 
 ## 📘 Redes
-
 - **Facebook:** [https://www.facebook.com/NEXUS.Codigo](https://www.facebook.com/NEXUS.Codigo)
-
 ## 📬 Contacto
 
 nexus.codigo.access@gmail.com
