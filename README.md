@@ -24,6 +24,12 @@ Software portable, limpio y sin publicidad.
 
 https://home-centralcommand.github.io
 
+## 📘 Facebook
+
+Seguí las novedades y descargas en la página oficial:
+
+👉 [facebook.com/Comando.Central](https://facebook.com/Comando.Central)
+
 ---
 
 © CENTRAL COMMAND · El poder del código.
