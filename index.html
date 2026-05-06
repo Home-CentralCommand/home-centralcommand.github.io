@@ -431,16 +431,18 @@
                                     <span style="color: #3f6eb0; font-size: 10px;">🖱️ CLIC PARA VER MÁS</span>
                                 </div>
                             </div>
-                        </div>
+                                                </div>
                         <div class="carousel-slide">
-                            <div class="project-card" style="margin:0; opacity:0.7; cursor:default;">
-                                <div class="project-code">// TOOLS</div>
-                                <h3>🚧 EN CONSTRUCCIÓN</h3>
-                                <div class="project-desc">Nuevas herramientas en desarrollo.</div>
-                                <div class="feature-line"><span class="feature-icon">🔜</span> Próximamente</div>
-                                <div class="feature-line"><span class="feature-icon">🛠️</span> En fase de pruebas</div>
+                            <div class="project-card" onclick="abrirModal('metadata')" style="margin:0;">
+                                <div class="project-code">// METADATA</div>
+                                <h3>METADATA Cleaner</h3>
+                                <div class="project-desc">Elimina metadatos de archivos multimedia y documentos.</div>
+                                <div class="feature-line"><span class="feature-icon">✅</span> Fotos JPG/PNG sin EXIF</div>
+                                <div class="feature-line"><span class="feature-icon">✅</span> Audio FLAC/MP3/WAV limpio</div>
+                                <div class="feature-line"><span class="feature-icon">✅</span> Vídeo MP4/MKV sin metadatos</div>
+                                <div class="feature-line"><span class="feature-icon">✅</span> PDF y DOCX sin información</div>
                                 <div style="text-align: center; margin-top: 12px; padding-top: 8px; border-top: 1px solid #222;">
-                                    <span style="color: #888; font-size: 10px;">DISPONIBLE PRONTO</span>
+                                    <span style="color: #3f6eb0; font-size: 10px;">🖱️ CLIC PARA VER MÁS</span>
                                 </div>
                             </div>
                         </div>
@@ -667,6 +669,34 @@
         <div style="margin-top: 18px; padding-top: 12px; border-top: 1px solid #222; text-align: right;">
             <button onclick="cerrarModal('android')" style="background: #1a1a1a; border: 1px solid #444; color: #fff; padding: 8px 16px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; cursor: pointer;">CERRAR</button>
         </div>
+    </div>
+</div>
+
+<div id="modal-metadata" class="modal-overlay" onclick="cerrarModalSiBackground(event,'metadata')">
+    <div class="modal-content">
+        <h3>METADATA CLEANER</h3>
+        <div class="bold-large">Elimina metadatos de archivos multimedia y documentos.</div>
+        <p>Limpia información oculta como ubicación GPS, datos de cámara, autoría, fechas y comentarios de fotos, audio, vídeo y documentos.</p>
+        <h4>Formatos soportados</h4>
+        <ul>
+            <li><span>✅</span> Imágenes: JPG, JPEG, PNG, TIFF, BMP, GIF</li>
+            <li><span>✅</span> Audio: MP3, WAV, FLAC</li>
+            <li><span>✅</span> Vídeo: MP4, MKV, AVI</li>
+            <li><span>✅</span> Documentos: PDF, DOCX</li>
+        </ul>
+        <h4>Características principales</h4>
+        <ul>
+            <li><span>✅</span> Eliminación de metadatos EXIF/XMP</li>
+            <li><span>✅</span> Limpieza de tags ID3 en MP3</li>
+            <li><span>✅</span> Elimina chunks INFO en WAV</li>
+            <li><span>✅</span> Limpia VORBIS_COMMENT en FLAC</li>
+            <li><span>✅</span> Elimina metadatos de MKV/MP4</li>
+            <li><span>✅</span> Limpia propiedades de PDF/DOCX</li>
+            <li><span>✅</span> Procesamiento por lotes</li>
+            <li><span>✅</span> 100% portable, sin instalación</li>
+        </ul>
+        <button class="btn-download" onclick="window.open('https://github.com/Home-CentralCommand/home-centralcommand.github.io/releases/download/v1.0/Metadata.Cleaner.exe', '_blank')">DESCARGAR</button>
+        <button class="modal-close" onclick="cerrarModal('metadata')">ACEPTAR</button>
     </div>
 </div>
 
